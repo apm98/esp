@@ -781,6 +781,7 @@ package tile is
       llc_coherent_dma_snd_full     : in  std_ulogic;
       coherent_dma_read             : out std_ulogic;
       coherent_dma_write            : out std_ulogic;
+      dma_toggle		    : in std_ulogic;
       coherent_dma_length           : out addr_t;
       coherent_dma_address          : out addr_t;
       coherent_dma_ready            : in  std_ulogic;

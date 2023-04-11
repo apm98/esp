@@ -385,6 +385,7 @@ begin
       rd_length                     => dma_read_ctrl_data_length,
       rd_size                       => dma_read_ctrl_data_size,
       rd_grant                      => dma_read_ctrl_ready,
+      dma_toggle	  	    => dma_read_ctrl_mode,
       bufdin_ready                  => dma_read_chnl_ready,
       bufdin_data                   => dma_read_chnl_data,
       bufdin_valid                  => dma_read_chnl_valid,
