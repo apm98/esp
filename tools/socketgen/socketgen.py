@@ -369,6 +369,7 @@ def write_acc_interface(f, acc, dma_width, datatype, rst, is_vivadohls_if, is_ca
     f.write("      dma_read_ctrl_msg          : out std_logic_vector(" + str(66) + " downto 0);\n")
     f.write("      dma_read_ctrl_val          : out std_ulogic;\n")
     f.write("      dma_read_ctrl_rdy          : in  std_ulogic;\n")
+    f.write("	   dma_read_ctrl_mode	      : in  std_ulogic;\n")
     f.write("\n")
     f.write("      dma_write_ctrl_msg         : out std_logic_vector(" + str(66) + " downto 0);\n")
     f.write("      dma_write_ctrl_val         : out std_ulogic;\n")
@@ -598,6 +599,7 @@ def write_acc_port_map(f, acc, dma_width, datatype, rst, is_noc_interface, is_vi
     f.write("      dma_read_ctrl_rsc_dat(31 downto 0)  => dma_read_ctrl_data_index,\n")
     f.write("      dma_read_ctrl_rsc_vld      => dma_read_ctrl_valid,\n")
     f.write("      dma_read_ctrl_rsc_rdy      => dma_read_ctrl_ready,\n")
+    f.write("	   dma_read_ctrl_mode(63 downto 48) => dma_toggle,\n")
     f.write("\n")
     f.write("      dma_write_ctrl_rsc_dat(" + str(66) + " downto " + str(64) + ") => dma_write_ctrl_data_size,\n"),
     f.write("      dma_write_ctrl_rsc_dat(" + str(63) + " downto " + str(32) + ") => dma_write_ctrl_data_length,\n")
@@ -643,6 +645,7 @@ def write_acc_port_map(f, acc, dma_width, datatype, rst, is_noc_interface, is_vi
     f.write("      dma_read_ctrl_msg(" + str(66) + " downto " + str(64) + ") => dma_read_ctrl_data_size,\n")
     f.write("      dma_read_ctrl_msg(" + str(63) + " downto " + str(32) + ") => dma_read_ctrl_data_length,\n")
     f.write("      dma_read_ctrl_msg(" + str(31) + " downto " + str(0) + ") => dma_read_ctrl_data_index,\n")
+    f.write("	   dma_read_ctrl_mode(" + str(63) + "downto" + str (48) + ") => dma_toggle,\n")
     f.write("      dma_write_ctrl_val         => dma_write_ctrl_valid,\n")
     f.write("      dma_write_ctrl_rdy         => dma_write_ctrl_ready,\n")
     f.write("      dma_write_ctrl_msg(" + str(66) + " downto " + str(64) + ") => dma_write_ctrl_data_size,\n")
